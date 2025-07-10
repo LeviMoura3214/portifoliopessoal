@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Pessoal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menu de navegação -->
+  <nav>
+  <ul>
+    <li><a href="#" onclick="carregarSecao('conteudo.html', 'sobre')">Sobre Mim</a></li>
+    <li><a href="#" onclick="carregarSecao('conteudo.html', 'formacao')">Formação</a></li>
+    <li><a href="#" onclick="carregarSecao('conteudo.html', 'Portifólio')">Portifólio</a></li>
+    <li><a href="#" onclick="carregarSecao('formulario2.html', 'contato')">Contato</a></li>
+  </ul>
+</nav>
+  <!-- Área onde o conteúdo será carregado -->
+  <main id="conteudo-principal">
+    <p style="text-align:center; padding: 20px;">Clique em uma seção do menu para visualizar o conteúdo.</p>
+  </main>
+  <!-- Script para carregar conteúdo -->
+  <script>
+  function carregarSecao(arquivo, idSecao) {
+    fetch(arquivo)
+      .then(resposta => resposta.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const secao = doc.getElementById(idSecao);
+        if (secao) {
+          document.getElementById('conteudo-principal').innerHTML = secao.outerHTML;
+        } else {
+          document.getElementById('conteudo-principal').innerHTML = "<p>Seção não encontrada.</p>";
+        }
+      })
+      .catch(erro => {
+        document.getElementById('conteudo-principal').innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
+        console.error('Erro ao carregar:', erro);
+      });
+  }
+</script>
+</body>
+</html>

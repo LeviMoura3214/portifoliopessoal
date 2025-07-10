@@ -1,0 +1,108 @@
+ /* Estilo geral */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    /* Menu diagonal */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1000;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transform: skewY(0deg);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      transform: skewY(0deg);
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: white;
+      color: #007BFF;
+    }
+
+    /* Seções */
+    section {
+      padding: 100px 20px;
+      margin-top: 80px;
+    }
+
+    section:nth-child(even) {
+      background-color: #e0e0e0;
+    }
+
+    h2 {
+      color: #007BFF;
+    }
+
+    /* Formulário de contato */
+    form {
+      max-width: 600px;
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
